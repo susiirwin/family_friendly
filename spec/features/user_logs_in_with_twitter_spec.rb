@@ -5,7 +5,7 @@ describe "Oauth with Twitter" do
     stub_omniauth
 
     visit '/'
-    click_on "Sign in with Twitter"
+    click_on "Log in with Twitter"
     expect(current_path).to eq('/')
     expect(page).to have_content("Horace")
     expect(page).to have_content("Logout")
