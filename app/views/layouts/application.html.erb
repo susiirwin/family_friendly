@@ -51,7 +51,7 @@
             Hello, <%= link_to "#{current_user.name}", dashboard_path %>
             <%= link_to "Logout", logout_path, method: :delete %>
           <% else %>
-            <%= link_to "Sign in with Twitter", twitter_login_path %>
+            <%= link_to "Log in with Twitter", twitter_login_path %>
           <% end %>
         </li>
         <li class="dropdown">
