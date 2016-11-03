@@ -1,0 +1,27 @@
+$primary-color: #283739;
+$secondary-color: #228896;
+$accent-color1: #A9C52F;
+$accent-color2: #F5F5F5;
+
+.container {
+  background-color: $secondary-color;
+}
+.jumbotron {
+  background-color: $accent-color1;
+  margin: 10px
+}
+
+.container-fluid {
+  background-color: $primary-color;
+  border-color: $primary-color;
+  color: $accent-color2;
+}
+
+.navbar-brand {
+  color: $accent-color2;
+}
+
+body {
+  background-image: image-url('paisley.png');
+  background-repeat:repeat;
+}
