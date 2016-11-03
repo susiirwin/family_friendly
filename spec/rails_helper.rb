@@ -6,7 +6,23 @@ abort("The Rails environment is running in production mode!") if Rails.env.produ
 require 'spec_helper'
 require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
-
+def stub_omniauth
+    OmniAuth.config.test_mode = true
+    OmniAuth.config.mock_auth[:twitter] = OmniAuth::AuthHash.new({
+      provider: 'twitter',
+      extra: {
+        raw_info: {
+          user_id: "1234",
+          name: "Horace",
+          screen_name: "worace"
+        }
+      },
+      credentials: {
+        token: "pizza",
+        secret: "secretpizza"
+      }
+    })
+  end
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
 # run as spec files by default. This means that files in spec/support that end
