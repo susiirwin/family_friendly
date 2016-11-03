@@ -10,6 +10,7 @@ def stub_omniauth
     OmniAuth.config.test_mode = true
     OmniAuth.config.mock_auth[:twitter] = OmniAuth::AuthHash.new({
       provider: 'twitter',
+      uid: "3456",
       extra: {
         raw_info: {
           user_id: "1234",
