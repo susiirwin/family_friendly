@@ -9,6 +9,6 @@ describe "User Logs Into App" do
     expect(page).to have_content("Horace")
     expect(page).to have_content("Logout")
     click_on "Horace"
-    expect(current_path).to eq("/user/dashboard/#{user_id}")
+    expect(current_path).to eq("/dashboard")
   end
 end
