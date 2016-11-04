@@ -1,6 +1,12 @@
 <div class="container">
   <div class="jumbotron">
-    <h2>Welcome to Your Family Friendly Profile, <%= "#{current_user.name}" %>!</h2>
+    <h2>Edit Your Family Friendly Profile...</h2>
+
+    <%= form_for @user do |f| %>
+      <%= f.label :zip_code %>
+      <%= f.text_field :zip_code %>
+
+    <% end %>
     <h2>My Zip Code:</h2>
 
     <h3>Number of Family Members:</h3>
@@ -10,6 +16,6 @@
     <h3>Number of Children age 3-4:</h3>
     <h3>Number of Children age 4-5:</h3>
 
-    <%= link_to 'Edit Profile', edit_user_path(current_user) %>
+    <%= link_to 'Update Profile' %>
   </div>
 </div>

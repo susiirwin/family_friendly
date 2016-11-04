@@ -10,10 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161103024557) do
+ActiveRecord::Schema.define(version: 20161104031637) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "families", force: :cascade do |t|
+    t.integer  "total_family"
+    t.integer  "age_0_1"
+    t.integer  "age_1_2"
+    t.integer  "age_2_3"
+    t.integer  "age_3_4"
+    t.integer  "age_4_5"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "user_id"
+    t.index ["user_id"], name: "index_families_on_user_id", using: :btree
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "screen_name"
@@ -23,6 +36,8 @@ ActiveRecord::Schema.define(version: 20161103024557) do
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
     t.string   "name"
+    t.string   "zip_code"
   end
 
+  add_foreign_key "families", "users"
 end
