@@ -1,13 +1,32 @@
 <div class="container">
   <div class="jumbotron">
     <h2>Welcome to Your Family Friendly Profile, <%= "#{current_user.name}" %>!</h2>
-    <h2>My Zip Code:</h2>
 
-    <h3>Number of Children age 0-1:</h3>
-    <h3>Number of Children age 1-2:</h3>
-    <h3>Number of Children age 2-3:</h3>
-    <h3>Number of Children age 3-4:</h3>
-    <h3>Number of Children age 4-5:</h3>
+    <table class=table>
+      <thead>
+        <tr>
+          <th>
+            Family Member Name
+          </th>
+          <th>
+            Age
+          </th>
+        </tr>
+        <% @user.families.each do |member| %>
+        <tr>
+          <td>
+            <%= member.name %>
+          </td>
+          <td>
+            <%= member.age %>
+          </td>
+        </tr>
+<% end %>
 
+
+      </thead>
+    </table>
+
+    <%= link_to 'Add Family Member', new_users_family_path %>
   </div>
 </div>

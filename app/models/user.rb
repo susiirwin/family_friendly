@@ -1,8 +1,7 @@
 class User < ApplicationRecord
+  has_many :families
 
   def self.from_omniauth(auth_info)
-
-      
     where(uid: auth_info[:uid]).first_or_create do |new_user|
       new_user.name               = auth_info.extra.raw_info.name
       new_user.screen_name        = auth_info.extra.raw_info.screen_name

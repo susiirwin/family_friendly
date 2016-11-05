@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="jumbotron">
+    <h2>Add to Your Family Friendly Profile...</h2>
+
+    <%= form_for [:users, @family] do |f| %>
+
+      <%= f.hidden_field :user_id, value: current_user.id  %>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+
+      <%= f.label :age %>
+      <%= f.text_field :age %>
+
+      <%= f.submit "Add Family Member" %>
+    <% end %>
+
+  </div>
+</div>
