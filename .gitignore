@@ -21,3 +21,6 @@
 
 # Ignore SimpleCov Results
 /coverage
+
+# Ignore VCR Cassettes
+/spec/fixtures/vcr_cassettes/*
