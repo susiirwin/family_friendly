@@ -7,12 +7,7 @@ describe "User Dashboard" do
     click_on "Log in with Twitter"
     visit '/dashboard'
     expect(current_path).to eq('/dashboard')
-    expect(page).to have_css("h1", :text => "Horace")
-    expect(page).to have_css("h3", :text => "Number of Children age 0-1:")
-    expect(page).to have_css("h3", :text => "Number of Children age 1-2:")
-    expect(page).to have_css("h3", :text => "Number of Children age 2-3:")
-    expect(page).to have_css("h3", :text => "Number of Children age 3-4:")
-    expect(page).to have_css("h3", :text => "Number of Children age 4-5:")
+    expect(page).to have_css("h2", :text => "Horace")
 
   end
 end
