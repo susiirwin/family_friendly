@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_one :family
+  has_many :families
 
   def self.from_omniauth(auth_info)
     where(uid: auth_info[:uid]).first_or_create do |new_user|
