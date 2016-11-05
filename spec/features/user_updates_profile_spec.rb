@@ -13,17 +13,13 @@ describe "User Profile" do
 
     expect(current_path).to eq(new_users_family_path)
 
-
     fill_in "family_name", with: "Jacoby"
     fill_in "family_age", with: 2
 
     click_on "Add Family Member"
     expect(current_path).to eq('/dashboard')
-
-
-    # user + DB count of users
-    expect(page).to have_content("Total Family Size: 2")
-    expect(page).to have_content("Jacoby, age 2")
+    expect(page).to have_content("Jacoby")
+    expect(page).to have_content(2)
 
   end
 end
