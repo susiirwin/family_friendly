@@ -11,6 +11,7 @@ describe "YelpService" do
       expect(response.businesses[0].name).to eq(expected_name)
       expect(response.businesses[0].phone).to eq("7203890447")
       expect(response.businesses[0].rating).to eq(5.0)
+      expect(response.businesses[0].location.display_address).to eq(["1543 Champa St", "Northwest", "Denver, CO 80202"])
     end
   end
 end
