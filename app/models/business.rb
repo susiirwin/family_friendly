@@ -1,5 +1,5 @@
 class Business
-  def self.find_one
-    business = 
+  def self.find_one(params)
+    require 'pry'; binding.pry
   end
 end
