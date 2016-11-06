@@ -4,7 +4,7 @@ class Business
   end
 
   def self.find_by(params)
-    business = Yelp.client.business('Denver', { term: params[:id] } )
-    require 'pry'; binding.pry
+    Yelp.client.business(params[:id])
+
   end
 end

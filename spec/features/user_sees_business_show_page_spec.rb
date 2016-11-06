@@ -1,9 +1,8 @@
 require 'rails_helper'
 
 describe "Business show page" do
-  xit "displays single business result from API" do
+  it "displays single business result from API" do
     VCR.use_cassette("sees_a_single_business") do
-
 
       stub_omniauth
       visit '/'
@@ -22,8 +21,7 @@ describe "Business show page" do
       expect(page).to have_content('["2641 E 2nd Ave", "Southeast", "Denver, CO 80206"]')
 
       first('div.results h3').click_on "See Details"
-
-      expect(current_path).to eq(business_path(business.id))
+      expect(current_path).to eq("/businesses/cherry-cricket-denver")
 
       expect(page).to have_content("Cherry Cricket")
       expect(page).to have_content("Average Yelp Rating: 4.0 Stars")
