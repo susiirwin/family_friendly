@@ -1,3 +1,10 @@
 <h1>Search Results</h1>
 
-<%= @results.name %>
+<%= @results.businesses.each do |b| %>
+  <h3><%= b.name %></h3>
+    <ul>
+      <li><%= b.location.display_address %></li>
+      <li><%= b.phone %></li>
+      <li><%= b.rating %></li>
+    </ul>
+<% end %>

@@ -10,6 +10,7 @@ describe "Business show page" do
 
       fill_in "search", with: "Rio Grande Mexican Restaurant"
       click_on "Submit"
+      
       expect(current_path).to eq(search_path)
 
       click_on("Rio Grande Mexican Restaurant")
