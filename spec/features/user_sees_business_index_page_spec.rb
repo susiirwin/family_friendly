@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe "Business index page" do
   it "displays all  business search results from API" do
-    VCR.use_cassette("sees_a_single_business") do
+    VCR.use_cassette("sees_all_results_business") do
       stub_omniauth
       visit '/'
       click_on "Log in with Twitter"

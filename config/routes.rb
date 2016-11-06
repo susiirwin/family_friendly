@@ -11,6 +11,6 @@ Rails.application.routes.draw do
   namespace :users do
     resources :families, only: [:new, :create]
   end
-  # resources :businesses, only: [:show]
+  resources :businesses, only: [:show]
 
 end
