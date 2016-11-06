@@ -1,0 +1,18 @@
+<div class="container">
+  <h1>Search Results</h1>
+  <div class="jumbotron">
+    <div class="yelp_business_show">
+      <h3><%= @business.businesses.name %>
+
+        <%= @results.businesses.each do |b| %>
+        <%= hidden_field_tag :yelp_id, value: b.id %>
+
+        <ul>
+          <li><%= b.location.display_address %></li>
+          <li><%= b.phone %></li>
+          <li>Average Yelp Rating: <%= b.rating %> Stars</li>
+        </ul>
+        <% end %>
+    </div>
+  </div>
+</div>
