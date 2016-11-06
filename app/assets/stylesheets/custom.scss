@@ -1,13 +1,18 @@
+// gray
 $primary-color: #283739;
+// blue
 $secondary-color: #228896;
+// green
 $accent-color1: #A9C52F;
+//white
 $accent-color2: #F5F5F5;
 
 .container {
   background-color: $secondary-color;
 }
+
 .jumbotron {
-  background-color: $accent-color1;
+  background-color: $accent-color2;
   margin: 10px
 }
 
@@ -19,6 +24,20 @@ $accent-color2: #F5F5F5;
 
 .navbar-brand {
   color: $accent-color2;
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  background-color: $accent-color2;
+  color: $accent-color1;
+}
+
+input#search {
+  color: $primary-color;
+}
+
+.btn-family {
+  background-color: $accent-color1;
+  color: white;
 }
 
 body {
