@@ -1,4 +1,6 @@
 class Business < ApplicationRecord
+  has_many :reviews
+  
   def self.find_all_qualifying_restaurants(params)
     results = Yelp.client.search('Denver', { term: params[:search] })
     results.businesses.map do |business|
