@@ -1,6 +1,7 @@
 class Businesses::ReviewsController < ApplicationController
   def new
-    @business = Business.find_by(params[:format])
+    require 'pry'; binding.pry
+    @business = Business.find_by(yelp_id: params[:id])
     @review = @business.reviews.new
   end
 end

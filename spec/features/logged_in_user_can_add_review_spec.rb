@@ -2,11 +2,8 @@ require 'rails_helper'
 
 describe "Business reviews" do
   it "can allow a logged in user to write a review" do
-    # added new episodes
     VCR.use_cassette("user_writes_review", record: :new_episodes) do
-      # retrieving relevant information from yelp server
       crave = YelpService.search_business('crave-real-burgers-denver-3')
-      # creating a new record in the database
       Business.create!(
         name: crave.business.name,
         yelp_id: crave.business.id,

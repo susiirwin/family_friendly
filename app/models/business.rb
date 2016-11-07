@@ -12,8 +12,4 @@ class Business < ApplicationRecord
       b
     end
   end
-
-  # def self.find_by(params)
-  #   Yelp.client.business(params[:id])
-  # end
 end

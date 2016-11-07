@@ -2,12 +2,13 @@
   <h1><%= @business.name %></h1>
   <div class="jumbotron">
     <div class="yelp_business_show">
-
+      <%= hidden_field_tag :id, :value => @business.id %>
       <h3>Phone Number: <%= @business.phone %> </h3>
       <h3>Address: <%= @business.address %> </h3>
       <h3>Average Yelp Rating: <%= @business.star_rating %> Stars</h3>
 
-      <%= link_to "Add a Family Friendly Review", new_businesses_review_path, method: :get, params: { id: params[:id] }, class: "btn btn-family" %>
+      <%= link_to "Add a Family Friendly Review", new_businesses_review_path(id: @business.yelp_id), class: "btn btn-family" %>
+      <!-- <%= link_to "Add a Family Friendly Review", new_businesses_review_path, method: :get, params: { id: params[:id] }, class: "btn btn-family" %> -->
     </div>
   </div>
 </div>
