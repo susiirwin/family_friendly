@@ -12,7 +12,7 @@ describe "Business index page" do
       click_on "Submit"
 
       expect(current_path).to eq(search_path)
-
+save_and_open_page
       expect(page).to have_content("Rio Grande Mexican Restaurant")
       expect(page).to have_content("Average Yelp Rating: 3.5")
       expect(page).to have_content("3036235432")
