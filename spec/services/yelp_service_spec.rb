@@ -17,7 +17,7 @@ describe "YelpService" do
 
   it "connects to business search" do
     VCR.use_cassette("business_connection") do
-      params = { id: "cherry-cricket-denver"}
+      params = "cherry-cricket-denver"
 
       expected_name = "Cherry Cricket"
       response = YelpService.search_business(params)

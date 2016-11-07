@@ -12,10 +12,9 @@ describe "Business index page" do
       click_on "Submit"
 
       expect(current_path).to eq(search_path)
-save_and_open_page
       expect(page).to have_content("Rio Grande Mexican Restaurant")
       expect(page).to have_content("Average Yelp Rating: 3.5")
-      expect(page).to have_content("3036235432")
+      expect(page).to have_content("+1-303-623-5432")
       expect(page).to have_content('["1525 Blake St", "Northwest", "Denver, CO 80202"]')
     end
   end
