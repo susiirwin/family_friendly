@@ -39,17 +39,17 @@ describe "Business reviews" do
       page.check("Stroller Storage")
       page.check("Play Area")
 
-      fill_in "Comments", with: "'The Queen of Hearts, she made some tarts, All on a summer day: The Knave of Hearts, he stole those tarts, And took them quite away!' 'Consider your verdict,' the King said to the jury. 'Not yet, not yet!' the Rabbit hastily interrupted. 'There's a great  deal to come before that!' 'Call the first witness,' said the King; and the White Rabbit blew three  blasts on the trumpet, and called out, 'First witness!' The first witness was the Hatter. He came in with a teacup in one  hand and a piece of bread-and-butter in the other."
-
       page.check("zero_one")
       page.check("one_two")
       page.check("two_three")
       page.check("three_four")
       page.check("five_and_up")
 
+      fill_in "Comments", with: "'The Queen of Hearts, she made some tarts, All on a summer day: The Knave of Hearts, he stole those tarts, And took them quite away!' 'Consider your verdict,' the King said to the jury. 'Not yet, not yet!' the Rabbit hastily interrupted. 'There's a great  deal to come before that!' 'Call the first witness,' said the King; and the White Rabbit blew three  blasts on the trumpet, and called out, 'First witness!' The first witness was the Hatter. He came in with a teacup in one  hand and a piece of bread-and-butter in the other."
+
       choose('business_rating_4')
 
-      click_on "Submit Review"
+      click_on "Create Review"
 
     end
   end
