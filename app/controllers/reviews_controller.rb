@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  before_action :require_login, only: [:show]
+  before_action :require_login, only: [:new, :create]
   def new
     business = Business.find(params[:business_id])
     review = business.reviews.new
@@ -29,10 +29,5 @@ class ReviewsController < ApplicationController
 
     complete_credentials
   end
-
-  def require_login
-
-  end
-
 
 end
