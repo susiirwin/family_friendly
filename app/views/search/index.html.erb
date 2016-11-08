@@ -2,13 +2,12 @@
   <h1>Search Results</h1>
   <div class="jumbotron">
     <div class="results">
-      <% @results.businesses.each do |b| %>
-      <%= hidden_field_tag :yelp_id, value: b.id %>
-      <h3><%= b.name %> <%= link_to "See Details", business_path(b.id), class: "btn btn-family" %></h3>
+      <% @results.each do |b| %>
+      <h3><%= b.name %> <%= link_to "See Details", business_path(b.yelp_id), class: "btn btn-family" %></h3>
       <ul>
-        <li><%= b.location.display_address %></li>
+        <li><%= b.address %></li>
         <li><%= b.phone %></li>
-        <li>Average Yelp Rating: <%= b.rating %> Stars</li>
+        <li>Average Yelp Rating: <%= b.star_rating %> Stars</li>
       </ul>
       <% end %>
     </div>
