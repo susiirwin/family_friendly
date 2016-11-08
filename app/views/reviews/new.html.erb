@@ -1,22 +1,32 @@
 <div class="container">
   <div class="jumbotron">
 
-    <%= form_for @review, url: business_reviews_path(@review.business)  do |f| %>
+    <%= form_for @review_object.review, url: business_reviews_path(@review_object.business)  do |f| %>
+
+    <table class="table">
+      <tr>
+        <th>
+          Check the box if the Amenity is Available at <%= @review_object.business.name %>
+        </th>
+      </tr>
+      <%= hidden_field_tag "business[amenity_ids][]", nil %>
+      <% @review_object.amenities.each do |amenity| %>
+      <tr>
+        <td>
+          <div class="field">
+              <%= check_box_tag "business[amenity_ids][]", amenity.id, false, id: dom_id(amenity) %>
+              <%= label_tag dom_id(amenity), amenity.amenity_name %>
+              <% end %>
+          </div>
+        </td>
+      </tr>
 
       <table class="table">
         <tr>
           <th>
-            Comments
+            How Many Stars for Family Friendliness do you give to <%= @review_object.business.name %>?
           </th>
         </tr>
-        <tr>
-          <td>
-            <%= f.text_area :comments, :placeholder => "Add your comments here..." %>
-          </td>
-        </tr>
-      </table>
-
-      <table class="table">
         <tr>
           <td><%= f.radio_button(:family_rating, 1) %> <%= label(:family_review_rating_one_star, '1 star') %></td>
         </tr>
@@ -33,6 +43,18 @@
           <td><%= f.radio_button(:family_rating, 5) %>  <%= label(:family_review_rating_four_stars, '5 stars') %></td>
         </tr>
       </table>
+
+      <table class="table">
+        <tr>
+          <th>Any Comments to add and share?</th>
+        </tr>
+        <tr>
+          <td>
+            <%= f.text_area :comments, :placeholder => "Add your comments here..." %>
+          </td>
+        </tr>
+      </table>
+
 
     <%= f.submit class: 'btn btn-family' %>
     <% end %>
