@@ -69,3 +69,20 @@ body {
 .new_review h3 {
   font-family: 'Permanent Marker', cursive;
 }
+
+form .rating {
+  margin: auto 0;
+}
+form .rating_star {
+  background-image: image-url('star.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 16px;
+  height: 16px;
+  display: block;
+  float: left;
+}
+
+form .on {
+  background-position: 0 16px;
+}
