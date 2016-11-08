@@ -38,23 +38,9 @@ ActiveRecord::Schema.define(version: 20161107195742) do
     t.integer  "user_id"
     t.integer  "business_id"
     t.text     "comments"
-    t.boolean  "ladies_room_table", default: false
-    t.boolean  "mens_room_table",   default: false
-    t.boolean  "kids_menu",         default: false
-    t.boolean  "seats",             default: false
-    t.boolean  "activites",         default: false
-    t.boolean  "nursing_area",      default: false
-    t.boolean  "slings",            default: false
-    t.boolean  "stroller_storage",  default: false
-    t.boolean  "play_area",         default: false
-    t.boolean  "zero_one",          default: false
-    t.boolean  "one_two",           default: false
-    t.boolean  "two_three",         default: false
-    t.boolean  "three_four",        default: false
-    t.boolean  "five_and_up",       default: false
-    t.decimal  "family_rating",                     null: false
-    t.datetime "created_at",                        null: false
-    t.datetime "updated_at",                        null: false
+    t.decimal  "family_rating", null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
     t.index ["business_id"], name: "index_reviews_on_business_id", using: :btree
     t.index ["user_id"], name: "index_reviews_on_user_id", using: :btree
   end
