@@ -7,7 +7,7 @@ describe "User Dashboard" do
     click_on "Log in with Twitter"
     visit '/dashboard'
     expect(current_path).to eq('/dashboard')
-    expect(page).to have_css("h2", :text => "Horace")
+    expect(page).to have_css("h1", :text => "Horace")
 
   end
 end
