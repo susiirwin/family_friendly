@@ -1,4 +1,5 @@
 class ReviewsController < ApplicationController
+  before_action :require_login, only: [:new, :create]
   def new
     business = Business.find(params[:business_id])
     review = business.reviews.new
@@ -11,7 +12,6 @@ class ReviewsController < ApplicationController
       flash[:notice] = "Thank you for your review!!"
       redirect_to business_path(@review.business.yelp_id)
     else
-      require 'pry'; binding.pry
       flash[:error] = @review.errors.full_messages
       render :new
     end
@@ -29,4 +29,5 @@ class ReviewsController < ApplicationController
 
     complete_credentials
   end
+
 end
