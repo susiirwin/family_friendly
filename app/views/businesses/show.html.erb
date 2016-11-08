@@ -1,13 +1,13 @@
 <div class="container">
-  <h1><%= @business.business.name %></h1>
+  <h1><%= @business.name %></h1>
   <div class="jumbotron">
     <div class="yelp_business_show">
+      <%= hidden_field_tag :id, :value => @business.id %>
+      <h3>Phone Number: <%= @business.phone %> </h3>
+      <h3>Address: <%= @business.address %> </h3>
+      <h3>Average Yelp Rating: <%= @business.star_rating %> Stars</h3>
 
-      <h3>Phone Number: <%= @business.business.phone %> </h3>
-      <h3>Address: <%= @business.business.location.display_address %> </h3>
-      <h3>Phone Number: <%= @business.business.phone %> </h3>
-      <h3>Average Yelp Rating: <%= @business.business.rating %> Stars</h3>
-
+      <%= link_to "Add a Family Friendly Review", new_business_review_path(@business), class: "btn btn-family" %>
     </div>
   </div>
 </div>

@@ -6,11 +6,13 @@ Rails.application.routes.draw do
   get '/dashboard', to: "dashboards#show"
   get '/search', to: "search#index"
 
-  # resources :users, only: [:edit, :update]
-
   namespace :users do
     resources :families, only: [:new, :create]
   end
   resources :businesses, only: [:show]
+
+  resources :businesses do
+    resources :reviews, only: [:new, :create]
+  end
 
 end
