@@ -1,14 +1,11 @@
 <div class="container">
+  <h1>Add your Family Friendly Review for <%= @review_object.business.name %></h1>
   <div class="jumbotron">
 
     <%= form_for @review_object.review, url: business_reviews_path(@review_object.business)  do |f| %>
-
+    <h3>Check the box if the Amenity is Available at <%= @review_object.business.name %></h3>
     <table class="table">
-      <tr>
-        <th>
-          Check the box if the Amenity is Available at <%= @review_object.business.name %>
-        </th>
-      </tr>
+
       <%= hidden_field_tag "business[amenity_ids][]", nil %>
       <% @review_object.amenities.each do |amenity| %>
       <tr>
@@ -22,11 +19,8 @@
       </tr>
 
       <table class="table">
-        <tr>
-          <th>
-            How Many Stars for Family Friendliness do you give to <%= @review_object.business.name %>?
-          </th>
-        </tr>
+        <h3>How Many Stars for Family Friendliness do you give to <%= @review_object.business.name %>?
+        </h3>
         <tr>
           <td><%= f.radio_button(:family_rating, 1) %> <%= label(:family_review_rating_one_star, '1 star') %></td>
         </tr>
@@ -45,9 +39,7 @@
       </table>
 
       <table class="table">
-        <tr>
-          <th>Any Comments to add and share?</th>
-        </tr>
+        <h3>Any Comments to add and share?</h3>
         <tr>
           <td>
             <%= f.text_area :comments, :placeholder => "Add your comments here..." %>
