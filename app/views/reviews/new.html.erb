@@ -1,9 +1,8 @@
-
 <div class="container">
-  <h1>Write a Family Friendly Review for "<%= @business.name %>"...</h1>
   <div class="jumbotron">
 
-    <%= form_for [:businesses, @review]  do |f| %>
+    <%= form_for @review, url: business_reviews_path(@review.business)  do |f| %>
+
       <table class="table">
         <tr>
           <th>

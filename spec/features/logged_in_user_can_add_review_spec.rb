@@ -4,7 +4,7 @@ describe "Business reviews" do
   it "can allow a logged in user to write a review" do
     VCR.use_cassette("user_writes_review", record: :new_episodes) do
       crave = YelpService.search_business('crave-real-burgers-denver-3')
-      Business.create!(
+      business = Business.create!(
         name: crave.business.name,
         yelp_id: crave.business.id,
         address: crave.business.location.display_address,
@@ -27,27 +27,11 @@ describe "Business reviews" do
 
       click_on "Add a Family Friendly Review"
 
-      expect(current_path).to eq(new_businesses_review_path)
+      expect(current_path).to eq(new_business_review_path(business.id))
 
-      page.check("Ladies' Room Changing Table")
-      page.check("Men's Room Changing Table")
-      page.check("Kid's Menu")
-      page.check("High Chairs/Booster Seats")
-      page.check("Crayons, Coloring Pages, Other Waiting Area Activites")
-      page.check("Nursing Area")
-      page.check("Carseat Slings")
-      page.check("Stroller Storage")
-      page.check("Play Area")
+      fill_in "review[comments]", with: "This is a review."
 
-      page.check("zero_one")
-      page.check("one_two")
-      page.check("two_three")
-      page.check("three_four")
-      page.check("five_and_up")
-
-      fill_in "Comments", with: "'The Queen of Hearts, she made some tarts, All on a summer day: The Knave of Hearts, he stole those tarts, And took them quite away!' 'Consider your verdict,' the King said to the jury. 'Not yet, not yet!' the Rabbit hastily interrupted. 'There's a great  deal to come before that!' 'Call the first witness,' said the King; and the White Rabbit blew three  blasts on the trumpet, and called out, 'First witness!' The first witness was the Hatter. He came in with a teacup in one  hand and a piece of bread-and-butter in the other."
-
-      choose('business_rating_4')
+      choose('review_family_rating_1')
 
       click_on "Create Review"
 
