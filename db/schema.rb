@@ -16,17 +16,10 @@ ActiveRecord::Schema.define(version: 20161108035621) do
   enable_extension "plpgsql"
 
   create_table "amenities", force: :cascade do |t|
-    t.boolean  "ladies_room_table", default: false
-    t.boolean  "mens_room_table",   default: false
-    t.boolean  "kids_menu",         default: false
-    t.boolean  "seats",             default: false
-    t.boolean  "activites",         default: false
-    t.boolean  "nursing_area",      default: false
-    t.boolean  "slings",            default: false
-    t.boolean  "stroller_storage",  default: false
-    t.boolean  "play_area",         default: false
-    t.datetime "created_at",                        null: false
-    t.datetime "updated_at",                        null: false
+    t.text     "amenity_name"
+    t.boolean  "available",    default: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
   end
 
   create_table "business_amenities", force: :cascade do |t|

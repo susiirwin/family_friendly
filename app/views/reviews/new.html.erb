@@ -1,13 +1,29 @@
 <div class="container">
   <div class="jumbotron">
 
-    <%= form_for @review, url: business_reviews_path(@review.business)  do |f| %>
+    <%= form_for @review_object.review, url: business_reviews_path(@review_object.business)  do |f| %>
+
+    <table class="table">
+      <tr>
+        <th>
+          Check the box if the Amenity is Available at <%= @review_object.business.name %>
+        </th>
+      </tr>
+      <%= hidden_field_tag "business[amenity_ids][]", nil %>
+      <% @review_object.amenities.each do |amenity| %>
+      <tr>
+        <td>
+          <div class="field">
+              <%= check_box_tag "business[amenity_ids][]", amenity.id, false, id: dom_id(amenity) %>
+              <%= label_tag dom_id(amenity), amenity.amenity_name %>
+              <% end %>
+          </div>
+        </td>
+      </tr>
 
       <table class="table">
         <tr>
-          <th>
-            Comments
-          </th>
+          <th>Comments</th>
         </tr>
         <tr>
           <td>
