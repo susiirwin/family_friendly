@@ -16,4 +16,10 @@ class Business < ApplicationRecord
       b
     end
   end
+
+  def average_family_friendly_rating
+    average_rating = reviews.average(:family_rating)
+    average_rating.to_f.round(2)
+
+  end
 end
