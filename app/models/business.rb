@@ -5,7 +5,6 @@ class Business < ApplicationRecord
   has_many :business_amenities
   has_many :amenities, through: :business_amenities
 
-
   def self.find_all_qualifying_restaurants(params)
     results = Yelp.client.search('Denver', { term: params[:search] })
     results.businesses.map do |business|
@@ -26,7 +25,8 @@ class Business < ApplicationRecord
   end
 
   def gather_comments
-    require 'pry'; binding.pry
-    reviews.
+    reviews.map do |review|
+      review.comments
+    end
   end
 end

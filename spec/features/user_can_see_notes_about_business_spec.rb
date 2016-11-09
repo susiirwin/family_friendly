@@ -15,11 +15,10 @@ describe "Business show page" do
       review = business.reviews.create!(user_id: user.id, comments: "This place is phenomenal for my family!", family_rating: 4.0)
 
       visit "/businesses/#{business.yelp_id}"
-save_and_open_page
       expect(page).to have_content("Crave Real Burgers")
 
       expect(page).to have_content("This place is phenomenal for my family!")
-
+  save_and_open_page
     end
   end
 end

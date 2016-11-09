@@ -25,6 +25,6 @@ RSpec.describe Business, type: :model do
     review1 = business.reviews.create!(user_id: user.id, family_rating: 4.0, comments: "This is a comment.")
 
     review_comment = business.gather_comments
-    expect(review_comment).to eq("This is a comment.")
+    expect(review_comment).to eq(["This is a comment."])
   end
 end
