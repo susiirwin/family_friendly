@@ -18,4 +18,13 @@ RSpec.describe Business, type: :model do
     average = business.average_family_friendly_rating
     expect(average).to eq(4.5)
   end
+
+  it 'can return comments made about this business' do
+    business = Business.create!(name: "Test Cafe")
+    user = User.create!(screen_name: "User 1")
+    review1 = business.reviews.create!(user_id: user.id, family_rating: 4.0, comments: "This is a comment.")
+
+    review_comment = business.gather_comments
+    expect(review_comment).to eq(["This is a comment."])
+  end
 end
