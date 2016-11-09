@@ -8,6 +8,7 @@
       <h3>Average Yelp Rating: <%= @business.star_rating %></h3>
       <h3>Average Family Friendly Rating: <%= @business.average_family_friendly_rating %></h3>
 
+
       <%= link_to "Add a Family Friendly Review", new_business_review_path(@business), class: "btn btn-family" %>
     </div>
   </div>
