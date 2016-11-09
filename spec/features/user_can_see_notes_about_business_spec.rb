@@ -18,7 +18,7 @@ describe "Business show page" do
       expect(page).to have_content("Crave Real Burgers")
 
       expect(page).to have_content("This place is phenomenal for my family!")
-  save_and_open_page
+
     end
   end
 end
