@@ -1,5 +1,6 @@
 class Business < ApplicationRecord
-  attr_reader :average_family_friendly_rating
+  attr_reader :average_family_friendly_rating,
+              :gather_comments
   has_many :reviews
   has_many :business_amenities
   has_many :amenities, through: :business_amenities
@@ -22,6 +23,10 @@ class Business < ApplicationRecord
   def average_family_friendly_rating
     average_rating = reviews.average(:family_rating)
     average_rating.to_f.round(2)
+  end
 
+  def gather_comments
+    require 'pry'; binding.pry
+    reviews.
   end
 end
