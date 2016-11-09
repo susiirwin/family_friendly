@@ -81,3 +81,24 @@ body {
   text-shadow: 1px 1px white;
   font-family: 'Roboto', sans-serif;
 }
+
+form .rating {
+  margin: auto 0;
+}
+form .rating_star {
+  background-image: image-url('Star_Outline.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 32px;
+  height: 32px;
+  display: block;
+  float: left;
+}
+
+form .on {
+  background-image: image-url('Colored_Star.png');
+}
+
+form input[type="radio"] {
+  visibility: hidden;
+}
