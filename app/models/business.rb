@@ -1,7 +1,9 @@
 class Business < ApplicationRecord
+  attr_reader :average_family_friendly_rating
   has_many :reviews
   has_many :business_amenities
   has_many :amenities, through: :business_amenities
+
 
   def self.find_all_qualifying_restaurants(params)
     results = Yelp.client.search('Denver', { term: params[:search] })
@@ -15,5 +17,11 @@ class Business < ApplicationRecord
       b.save!
       b
     end
+  end
+
+  def average_family_friendly_rating
+    average_rating = reviews.average(:family_rating)
+    average_rating.to_f.round(2)
+
   end
 end

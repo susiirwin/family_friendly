@@ -4,8 +4,9 @@
     <div class="yelp_business_show">
       <%= hidden_field_tag :id, :value => @business.id %>
       <h3>Phone Number: <%= @business.phone %> </h3>
-      <h3>Address: <%= @business.address %> </h3>
-      <h3>Average Yelp Rating: <%= @business.star_rating %> Stars</h3>
+      <h3>Address: <%= format_display_address(@business.address) %> </h3>
+      <h3>Average Yelp Rating: <%= @business.star_rating %></h3>
+      <h3>Average Family Friendly Rating: <%= @business.average_family_friendly_rating %></h3>
 
       <%= link_to "Add a Family Friendly Review", new_business_review_path(@business), class: "btn btn-family" %>
     </div>
