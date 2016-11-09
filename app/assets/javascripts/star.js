@@ -1,7 +1,7 @@
 var color_stars = function(){
   var star = $(this);
   var business_id = $(this).attr('data-business-id');
-  var stars = $(this).attr('data-stars');
+  var stars = $(this).attr('data-stars-id');
 
   for(i=1; i<=5; i++){
     if(i <= stars){
@@ -13,6 +13,4 @@ var color_stars = function(){
 }
 $(document).ready(function() {
   $('form .rating_star').on("click", color_stars);
-  $('form .rating_star').on("hover", color_stars);
-
 });
