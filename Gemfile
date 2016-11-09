@@ -32,6 +32,7 @@ gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'rails_12factor', group: :production
 gem 'yelp', require: 'yelp'
+gem "skylight"
 
 
 group :development, :test do
