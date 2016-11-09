@@ -23,7 +23,7 @@ describe "Business reviews" do
       first('div.results h3').click_on "See Details"
 
       expect(page).to have_content("Crave Real Burgers")
-      expect(page).to have_content("Average Yelp Rating: 4.5 Stars")
+      expect(page).to have_content("Average Yelp Rating: 4.5")
 
       click_on "Add a Family Friendly Review"
 

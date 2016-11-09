@@ -3,12 +3,21 @@
   <div class="jumbotron">
     <div class="results">
       <% @results.each do |b| %>
-      <h3><%= b.name %> <%= link_to "See Details", business_path(b.yelp_id), class: "btn btn-family" %></h3>
-      <ul>
-        <li><%= b.address %></li>
-        <li><%= b.phone %></li>
-        <li>Average Yelp Rating: <%= b.star_rating %> Stars</li>
-      </ul>
+      <h3><%= b.name %>  <%= link_to "See Details", business_path(b.yelp_id), class: "btn btn-family" %></h3>
+
+      <table class="striped">
+        <tr>
+          <td>
+            <%= format_display_address(b.address) %>
+          </td>
+        </tr>
+
+
+      </table>
+      <br />
+
+
+
       <% end %>
     </div>
   </div>
