@@ -60,6 +60,24 @@ body {
   width: 100%;
   top: 0;
   text-align: left;
-  z-index: -100;
   margin-top: -20px;
+}
+
+.background-image h1 {
+  font-family: 'Permanent Marker', cursive;
+  margin: 0;
+  float: right;
+  font-size: 200px;
+  padding: 90px 30px 0 0;
+}
+
+.background-image h2 {
+  font-family: 'Permanent Marker', cursive;
+  margin: 0;
+  width: 700px;
+  font-size: 75px;
+  float: right;
+  padding: 120px 30px 0 0;
+  text-shadow: 1px 1px white;
+  font-family: 'Roboto', sans-serif;
 }
