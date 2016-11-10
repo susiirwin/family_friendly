@@ -29,4 +29,11 @@ class Business < ApplicationRecord
       review.comments
     end
   end
+
+  def show_amenities
+    business_amenities.map do |amenity|
+      amenity = Amenity.find(amenity.amenity_id)
+      amenity.amenity_name
+    end
+  end
 end

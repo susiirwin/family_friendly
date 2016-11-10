@@ -11,6 +11,13 @@
 
       <%= link_to "Add a Family Friendly Review", new_business_review_path(@business), class: "btn btn-family" %>
 
+      <h3>Amenities Available to Guests:</h3>
+        <% @business.show_amenities.each do |amenity| %>
+          <ul>
+            <li> <%= amenity %> </li>
+          </ul>
+          <% end %>
+
       <h3>Reviews left by other Family Friendly Members:</h3>
 
       <% @business.gather_comments.each do |comment| %>
@@ -18,7 +25,7 @@
           <li><%= comment %></li>
         </ul>
       <% end %>
-      
+
     </div>
   </div>
 </div>
