@@ -7,18 +7,15 @@ Family-Friendly is designed around the Yelp API v2. Users can log in with a Twit
 * Rails version - 5.0
 
 * Database creation
-To create the databases:
 
-  ```rake db:create```
+  To create the databases:
 
-  ```rake db:migrate```
+    ```rake db:create```
 
-  ```rake db:seed ```
+    ```rake db:migrate```
+
+    ```rake db:seed```
 
 * How to run the test suite
 
-  The test suite can be run by typing
-
-  ```rspec```
-
-  in the terminal.
+  The test suite can be run by typing into the terminal: ```rspec```
