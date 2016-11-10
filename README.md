@@ -18,8 +18,4 @@ Family-Friendly is designed around the Yelp API v2. Users can log in with a Twit
 
 * How to run the test suite
 
-  The test suite can be run by typing
-
-    ```rspec```
-
-  in the terminal.
+  The test suite can be run by typing into the terminal: ```rspec```
