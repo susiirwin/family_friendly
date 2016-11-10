@@ -23,10 +23,6 @@ class ReviewsController < ApplicationController
     params.require(:review).permit(:comments, :family_rating)
   end
 
-  def amenity_params
-    params[:amenity_ids]
-  end
-
   def complete_review_params
     complete_credentials = review_params
     complete_credentials[:business_id] = params[:business_id]
