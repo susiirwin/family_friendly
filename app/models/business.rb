@@ -7,6 +7,7 @@ class Business < ApplicationRecord
 
   def self.find_all_qualifying_restaurants(params)
     results = Yelp.client.search('Denver', { term: params[:search] })
+    require 'pry'; binding.pry
     results.businesses.map do |business|
       b = Business.find_or_initialize_by(yelp_id: business.id)
       b.name = business.name
