@@ -27,14 +27,4 @@ RSpec.describe Business, type: :model do
     review_comment = business.gather_comments
     expect(review_comment).to eq(["This is a comment."])
   end
-
-  it 'can return list of true amenities' do
-    business = Business.create!(name: "Test Cafe")
-    amenity = Amenity.create!(amenity_name: "Women's Room Changing Table", available: true)
-    user = User.create!(screen_name: "User 1")
-    review1 = business.reviews.create!(user_id: user.id, family_rating: 4.0, comments: "This is a comment.", amenity_ids: amenity.id)
-
-    review_amenities = business.show_amenities
-    expect(review_amenities).to eq(["Women's Room Changing Table"])
-  end
 end
