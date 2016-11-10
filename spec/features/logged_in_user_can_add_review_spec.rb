@@ -28,6 +28,7 @@ describe "Business reviews" do
       click_on "Add a Family Friendly Review"
 
       expect(current_path).to eq(new_business_review_path(business.id))
+      
 
       fill_in "review[comments]", with: "This is a review."
 
