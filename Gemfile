@@ -32,7 +32,8 @@ gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'rails_12factor', group: :production
 gem 'yelp', require: 'yelp'
-gem "skylight"
+gem "skylight", group: :production
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
