@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe "User Profile" do
-  it "allows user to update profile information" do
+  it "allows user to add family member" do
 
     user = User.create(screen_name: "tester", uid: "1233455", oauth_token: "token", oauth_token_secret: "secret", name: "Tester McTester")
     visit '/'
