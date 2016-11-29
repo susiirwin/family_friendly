@@ -14,7 +14,7 @@ describe "Business show page" do
       click_on "Submit"
       expect(current_path).to eq(search_path)
       expect(page).to have_content("Cherry Cricket")
-      expect(page).to have_content("2641 E 2nd Ave, Southeast, Denver, CO 80206")
+      expect(page).to have_content("2641 E 2nd Ave\nDenver, CO 80206")
 
       first('div.results h3').click_on "See Details"
       expect(current_path).to eq("/businesses/cherry-cricket-denver")
@@ -24,7 +24,7 @@ describe "Business show page" do
       expect(page).to have_content("Average Yelp Rating: 4.0")
       expect(page).to have_content("+1-303-322-7666")
       expect(page).to have_content("Average Family Friendly Rating:")
-      expect(page).to have_content("2641 E 2nd Ave, Southeast, Denver, CO 80206")
+      expect(page).to have_content("2641 E 2nd Ave\nDenver, CO 80206")
 
     end
   end

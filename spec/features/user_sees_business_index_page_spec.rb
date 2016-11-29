@@ -13,7 +13,7 @@ describe "Business index page" do
 
       expect(current_path).to eq(search_path)
       expect(page).to have_content("Rio Grande Mexican Restaurant")
-      expect(page).to have_content("1525 Blake St, Northwest, Denver, CO 80202")
+      expect(page).to have_content("1525 Blake St\nDenver, CO 80202")
     end
   end
 end

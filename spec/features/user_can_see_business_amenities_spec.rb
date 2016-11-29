@@ -8,7 +8,10 @@ describe "Business show page" do
       business = Business.create!(
         name: crave.business.name,
         yelp_id: crave.business.id,
-        address: crave.business.location.display_address,
+        street: crave.business.location.address,
+        city: crave.business.location.city,
+        state: crave.business.location.state_code,
+        zip_code: crave.business.location.postal_code,
         phone: crave.business.display_phone,
         star_rating: crave.business.rating
       )

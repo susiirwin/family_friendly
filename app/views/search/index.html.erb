@@ -4,16 +4,17 @@
     <div class="results">
       <% @results.each do |b| %>
       <h3><%= b.name %>  <%= link_to "See Details", business_path(b.yelp_id), class: "btn btn-family" %></h3>
-      Categories: <%= b.categories %>
 
-      <table class="striped">
+      <table class="table striped">
         <tr>
           <td>
-            <p><%= b.address %></p>
+            <p>
+              <%= b.street %>
+              <br>
+              <%= b.city %>, <%= b.state %> <%= b.zip_code %>
+            </p>
           </td>
         </tr>
-
-
       </table>
       <br />
       <% end %>
