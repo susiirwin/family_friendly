@@ -44,8 +44,14 @@
           <li>"<%= comment %>"</li>
         </ul>
       <% end %>
+
+
       <br>
-      <%= link_to "Add a Family Friendly Review", new_business_review_path(@business), class: "btn btn-family" %>
+      <% if current_user %>
+        <%= link_to "Add a Family Friendly Review", new_business_review_path(@business), class: "btn btn-family" %>
+      <% else %>
+        <%= link_to "Log in with Twitter To Write a Review", twitter_login_path, class: "btn btn-family" %></li>
+      <% end %>
     </div>
   </div>
 </div>
