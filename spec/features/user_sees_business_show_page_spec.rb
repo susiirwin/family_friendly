@@ -22,7 +22,7 @@ describe "Business show page" do
 
       expect(page).to have_content("Cherry Cricket")
       expect(page).to have_content("Average Yelp Rating: 4.0")
-      expect(page).to have_content("+1-303-322-7666")
+      expect(page).to have_content("3033227666")
       expect(page).to have_content("Average Family Friendly Rating:")
       expect(page).to have_content("2641 E 2nd Ave\nDenver, CO 80206")
 

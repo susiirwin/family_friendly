@@ -16,7 +16,7 @@ class Business < ApplicationRecord
       b.city = business.location.city
       b.state = business.location.state_code
       b.zip_code = business.location.postal_code
-      b.phone = business.display_phone
+      b.phone = business.phone
       b.categories = business.categories.join(', ')
       b.save!
       b
