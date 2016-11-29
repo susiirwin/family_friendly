@@ -1,5 +1,5 @@
 class YelpService
-  def self.conn(city)
+  def self.conn(location)
     Yelp.client.search('Denver')
   end
 

@@ -7,7 +7,10 @@ describe "Business reviews" do
       business = Business.create!(
         name: crave.business.name,
         yelp_id: crave.business.id,
-        address: crave.business.location.display_address,
+        street: crave.business.location.address,
+        city: crave.business.location.city,
+        state: crave.business.location.state_code,
+        zip_code: crave.business.location.postal_code,
         phone: crave.business.display_phone,
         star_rating: crave.business.rating
       )
@@ -28,7 +31,7 @@ describe "Business reviews" do
       click_on "Add a Family Friendly Review"
 
       expect(current_path).to eq(new_business_review_path(business.id))
-      
+
 
       fill_in "review[comments]", with: "This is a review."
 
