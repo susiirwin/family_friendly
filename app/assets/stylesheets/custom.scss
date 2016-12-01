@@ -26,9 +26,9 @@ $accent-color2: #F5F5F5;
   color: $accent-color2;
 }
 
-.navbar-brand {
+a.navbar-brand {
   font-family: 'Permanent Marker', cursive;
-  color: $accent-color2;
+  color: white;
 }
 
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
@@ -86,6 +86,7 @@ body {
 form .rating {
   margin: auto 0;
 }
+
 form .rating_star {
   background-image: image-url('Star_Outline.png');
   background-repeat: no-repeat;
@@ -102,4 +103,45 @@ form .on {
 
 form input[type="radio"] {
   visibility: hidden;
+}
+
+h2.contact {
+  text-align: center;
+}
+
+img.github-icon {
+  background-image: image-url('Octocat.png');
+  width: 64px;
+  height: 64px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+img.twitter-icon {
+  background-image: image-url('Twitter_Logo_White_On_Blue.png');
+  width: 64px;
+  height: 64px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+img.linkedin-icon {
+  background-image: image-url('linkedin-512.png');
+  width: 64px;
+  height: 64px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+img.email-icon {
+  background-image: image-url('logo_gmail_64px.png');
+  width: 64px;
+  height: 64px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  border: 0px;
 }

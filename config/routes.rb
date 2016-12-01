@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   delete '/logout', to: "sessions#destroy"
   get '/dashboard', to: "dashboards#show"
   get '/search', to: "search#index"
+  get '/about', to: "home#about"
+  get '/about_dev', to: "home#about_dev"
+  get '/contact', to: "home#contact"
 
   namespace :users do
     resources :families, only: [:new, :create]
